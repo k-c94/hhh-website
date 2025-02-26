@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hhh band</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Custom styles for the email form */
+        .newsletter-container {
+            text-align: center;
+            color: white; /* White text */
+            margin-top: 20px;
+        }
+        .newsletter-input {
+            background-color: black; /* Black input box */
+            border: 1px solid white;
+            color: white;
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+        }
+        .newsletter-input::placeholder {
+            color: gray; /* Placeholder color */
+        }
+        .newsletter-submit {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        .newsletter-submit:hover {
+            color: #888; /* Light gray on hover */
+        }
+    </style>
+</head>
+<body style="background-color:#000000;">
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand" href="#">Facebook</a>
+            <a class="navbar-brand" href="#">Youtube</a>
+            <a class="navbar-brand" href="#">X</a>
+            <a class="navbar-brand" href="#">Instagram</a>
+            <a class="navbar-brand" href="#">Spotify</a>
+            <a class="navbar-brand" href="#">Shop</a>
+        </div>
+    </nav>
+
+    <div id="header-logo" class="justify-content-center">
+        <h1 id="site-name" class="site-name site-name-front">
+            <a href="#" title="Home" rel="home" class="active" custom-link-name="hhH Logo">
+                <img src="./media/hhH.png" alt="hhH Logo">
+            </a>
+        </h1>
+    </div>
+
+    <div class="newsletter-container">
+        <h2>Subscribe to our Newsletter</h2>
+        <form action="action_page.php">
+            <input type="email" placeholder="Email address" name="mail" required class="newsletter-input">
+            <button type="submit" class="newsletter-submit">➡</button>
+        </form>
+    </div>
+
+    <div class="video-container">
+        <video autoplay muted loop width="640" height="360">
+            <source src="./media/vid_hhh.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="container-fluid text-center text-white mt-5">
+        <h2>Upcoming Dates</h2>
+        
+            <table class="table table-borderless table-dark">
+  <thead>
+    
+  </thead>
+  <tbody>
+    <tr>
+        <td>Belfast, UK</td>
+        <td>March 15, 2025</td>
+        <td><a href="#" class="btn btn-outline-light btn-sm">Buy Tickets</a></td>
+    </tr>
+    <tr>
+        <td>New York, NY</td>
+        <td>March 30, 2025</td>
+        <td><a href="#" class="btn btn-outline-light btn-sm">Buy Tickets</a></td>
+    </tr>
+    <tr>
+        <td>Dublin, IE</td>
+        <td>April 15, 2025</td>
+        <td><a href="#" class="btn btn-outline-light btn-sm">Buy Tickets</a></td>
+    </tr>
+    
+  </tbody>
+</table>
+        
+    </div>
+    
+    <footer class="text-center text-white mt-5 p-4" style="background-color: black; border-top: 1px solid white;">
+        <p>&copy; 2025 HHH Band. All rights reserved.</p>
+        <p><a href="#" class="text-white text-decoration-none">Privacy Policy</a> | <a href="#" class="text-white text-decoration-none">Terms of Service</a></p>
+        <p>Made by <a href="#" class="text-white text-decoration-none">Kieran Clifton</a></p>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Custom Navbar Styling */
+
+
+.navbar .navbar-brand {
+    color: rgb(255, 255, 255);
+}
+
+.navbar .navbar-brand:hover {
+    color: white;
+}
+
+/* Center the Logo */
+#header-logo {
+    text-align: center;
+}
+
+/* Form container styles */
+.container {
+    margin: 10px;
+}
+
+/* Newsletter input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.video-container {
+    width: 100vw; /* Full width of the viewport */
+    height: 450px; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100vh; /* Use height as width since we rotate */
+    height: 100vw; /* Use width as height */
+    transform: rotate(90deg); /* Rotate to make vertical video horizontal */
+    object-fit: cover; /* Ensure it covers the screen nicely */
+}
+
+.table table-borderless{
+    color: #000000;
+}
+
