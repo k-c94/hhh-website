@@ -1,3 +1,15 @@
+/* Prevent Horizontal Scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Ensure All Elements Fit the Screen */
+.container-fluid, .table, .video-container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* Custom Navbar Styling */
 
 
@@ -9,9 +21,20 @@
     color: white;
 }
 
-/* Center the Logo */
+/* Logo Container */
 #header-logo {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Logo Image */
+#header-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 300px; /* Default size */
 }
 
 /* Form container styles */
@@ -84,8 +107,19 @@ input[type="submit"]:hover {
     object-fit: cover; /* Ensure it covers the screen nicely */
 }
 
-.table table-borderless{
-    color: #000000;
+/* Video Resizes to Fit */
+.video-container video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Make Sure the Table Doesn’t Overflow */
+.table {
+    
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 /* MEDIA QUERIES - Adjusts Layout on Smaller Screens */
