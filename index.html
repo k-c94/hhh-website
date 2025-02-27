@@ -104,6 +104,7 @@
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll('.btn-outline-light').forEach(button => {
         button.addEventListener('click', function() {
+            console.log("Purchase Event Fired");
           fbq('track', 'Purchase', { value: '20.00', currency: 'USD' });
         });
       });
