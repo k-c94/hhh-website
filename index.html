@@ -32,10 +32,10 @@
         <div class="container-fluid justify-content-center">
             <a class="navbar-brand" href="#">Facebook</a>
             <a class="navbar-brand" href="#">Youtube</a>
-            <a class="navbar-brand" href="https://bsky.app/profile/hhhmusic.bsky.social">BlueSky</a>
-            <a class="navbar-brand" href="https://www.instagram.com/hhh_music__/">Instagram</a>
-            <a class="navbar-brand" href="https://tuath.space/shop/">Shop</a>
-            <a class="navbar-brand" href="https://hhhland.neocities.org/mylinks/public/">LinkTree</a>
+            <a id="bluesky" class="navbar-brand" href="https://bsky.app/profile/hhhmusic.bsky.social">BlueSky</a>
+            <a id="instagram" class="navbar-brand" href="https://www.instagram.com/hhh_music__/">Instagram</a>
+            <a id="shop" class="navbar-brand" href="https://tuath.space/shop/">Shop</a>
+            <a id="linktree" class="navbar-brand" href="https://hhhland.neocities.org/mylinks/public/">LinkTree</a>
         </div>
     </nav>
 
@@ -49,7 +49,7 @@
 
     <div class="newsletter-container">
         <h2>Subscribe to our Newsletter</h2>
-        <form action="action_page.php">
+        <form action="#">
             <input type="email" placeholder="Email address" name="mail" required class="newsletter-input">
             <button type="submit" class="newsletter-submit">➡</button>
         </form>
@@ -97,20 +97,30 @@
     <!-- Script to track navbar and newsletter clicks -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Track Navbar Link Clicks
-            document.querySelectorAll('.navbar-brand').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    console.log("Navbar Link Clicked: " + event.target.textContent);
-                    fbq('track', 'CustomEvent', { event: 'NavbarLinkClick', link: event.target.textContent });
+        // Track individual Navbar Link Clicks using their IDs
+        const navbarLinks = [
+            { id: 'bluesky', eventName: 'BlueSkyLinkClick' },
+            { id: 'instagram', eventName: 'InstagramLinkClick' },
+            { id: 'shop', eventName: 'ShopLinkClick' },
+            { id: 'linktree', eventName: 'LinkTreeLinkClick' }
+        ];
+
+        navbarLinks.forEach(link => {
+            const navbarItem = document.getElementById(link.id);
+            if (navbarItem) {
+                navbarItem.addEventListener('click', function(event) {
+                    console.log(`${link.eventName} Clicked: ${event.target.textContent}`);
+                    fbq('track', 'CustomEvent', { event: link.eventName, link: event.target.textContent });
                 });
-            });
+            }
+        });
 
             // Track Newsletter Form Submission
             const newsletterForm = document.querySelector('.newsletter-container form');
             newsletterForm.addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent default form submission for testing
                 console.log("Newsletter Signup Clicked");
-                fbq('track', 'Lead'); // Send the "Lead" event to Facebook Pixel
+                fbq('track', 'NewsLetter Sign Up'); 
                 newsletterForm.submit(); // Submit the form after tracking
             });
 
