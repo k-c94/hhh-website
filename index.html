@@ -32,10 +32,10 @@
         <div class="container-fluid justify-content-center">
             <a class="navbar-brand" href="#">Facebook</a>
             <a class="navbar-brand" href="#">Youtube</a>
-            <a class="navbar-brand" href="#">X</a>
-            <a class="navbar-brand" href="#">Instagram</a>
-            <a class="navbar-brand" href="#">Spotify</a>
-            <a class="navbar-brand" href="#">Shop</a>
+            <a class="navbar-brand" href="https://bsky.app/profile/hhhmusic.bsky.social">BlueSky</a>
+            <a class="navbar-brand" href="https://www.instagram.com/hhh_music__/">Instagram</a>
+            <a class="navbar-brand" href="https://tuath.space/shop/">Shop</a>
+            <a class="navbar-brand" href="https://hhhland.neocities.org/mylinks/public/">LinkTree</a>
         </div>
     </nav>
 
@@ -99,3 +99,14 @@
     
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.btn-outline-light').forEach(button => {
+        button.addEventListener('click', function() {
+          fbq('track', 'Purchase', { value: '20.00', currency: 'USD' });
+        });
+      });
+    });
+  </script>
+  
