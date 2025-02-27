@@ -2,6 +2,8 @@
 html, body {
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Ensure All Elements Fit the Screen */
@@ -10,90 +12,176 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Custom Navbar Styling */
-
-
-.navbar .navbar-brand {
-    color: rgb(255, 255, 255);
-}
-
-.navbar .navbar-brand:hover {
-    color: rgb(247, 214, 214);
-}
-
-/* Logo Container */
-#header-logo {
+/* === NAVBAR STYLING === */
+.navbar {
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap; /* Prevents wrapping by default */
+    justify-content: space-between; /* Ensures proper spacing */
     align-items: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 15px; /* Adjust padding */
+    background-color: black;
+    overflow: hidden;
 }
 
-/* Logo Image */
-#header-logo img {
-    max-width: 100%;
-    height: auto;
-    width: 300px; /* Default size */
-}
-
-/* Form container styles */
-.container {
-    margin: 10px;
-}
-
-/* Newsletter input fields */
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background-color: #333;
+/* Left-aligned "hhH" Logo */
+.hhH-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    margin-right: auto; /* Push everything else to the right */
 }
 
-input[type="submit"]:hover {
-    background-color: #555;
+/* Navbar Links */
+.navbar .navbar-links {
+    display: flex;
+    gap: 15px; /* Adjust space between links */
+    flex-wrap: nowrap;
 }
 
-/* Custom styles for the email form */
+/* Navbar Brand Styling */
+.navbar .navbar-brand {
+    color: white;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+/* Navbar Hover Effects */
+.navbar .navbar-brand:hover {
+    color: rgb(247, 214, 214);
+    transform: scale(1.1);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Social Media Icons */
+.social-nav a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.social-nav img {
+    height: 30px;
+    width: auto;
+    filter: invert(1); /* Makes them white */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-nav a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* === BUTTON HOVER EFFECT === */
+button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05); /* Slight pop-out effect */
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
+}
+
 .newsletter-container {
+    background-color: #000; /* Changed to black */
+    padding: 13px; /* Reduced padding to decrease height */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Adjusted shadow for dark background */
     text-align: center;
-    color: white; /* White text */
-    margin-top: 20px;
-}
-.newsletter-input {
-    background-color: black; /* Black input box */
-    border: 1px solid white;
-    color: white;
-    padding: 10px;
-    width: 80%;
-    margin: 10px 0;
-}
-.newsletter-input::placeholder {
-    color: gray; /* Placeholder color */
-}
-.newsletter-submit {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
-.newsletter-submit:hover {
-    color: #888; /* Light gray on hover */
+    max-width: 500px; /* Increased max-width to make it wider */
+    margin: auto; /* Center the container */
+    color: white; /* Set text color to white */
 }
 
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+.newsletter-container {
+    background-color: #000; /* Black background */
+    padding: 13px; /* Reduced padding to decrease height */
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px; /* Increased max-width to make it wider */
+    margin: auto; /* Center the container */
+    color: white; /* Set text color to white */
+    position: relative; /* Required for the pseudo-element */
+    overflow: hidden; /* Ensures the border doesn't overflow */
+}
+
+/* Rainbow border effect */
+.newsletter-container::before {
+    content: '';
+    position: absolute;
+    top: -2px; /* Adjust to cover the border */
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #ff0000, #ff7f00, #ffff00, #00ff00, 
+        #0000ff, #4b0082, #9400d3, #ff0000);
+    background-size: 400% 400%; /* Larger background for smooth animation */
+    border-radius: 10px; /* Slightly larger to cover the container's border */
+    z-index: -1; /* Place behind the container */
+    animation: rainbow-border 4s linear infinite; /* Animation */
+}
+
+@keyframes rainbow-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-form input {
+    padding: 8px; /* Reduced padding to decrease height */
+    margin-bottom: 8px; /* Reduced margin to decrease height */
+    border: 1px solid #555; /* Adjusted border color for dark background */
+    border-radius: 4px;
+    background-color: #333; /* Darker background for input */
+    color: white; /* White text for input */
+}
+
+.newsletter-form input::placeholder {
+    color: #aaa; /* Light gray placeholder text */
+}
+
+.newsletter-form button {
+    padding: 6px; /* Reduced padding to decrease height */
+    background-color: #5617ca; /* Your preferred button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #6a1fd9; /* Slightly lighter on hover */
+}
+
+p {
+    font-size: 0.8em; /* Reduced font size to decrease height */
+    color: #ccc; /* Light gray text for better readability */
+    margin: 5px 0; /* Adjusted margin to decrease height */
+}
+
+/* === VIDEO CONTAINER === */
 .video-container {
-    width: 100vw; /* Full width of the viewport */
-    height: 450px; /* Full height of the viewport */
+    width: 100vw;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,62 +189,100 @@ input[type="submit"]:hover {
 }
 
 .video-container video {
-    width: 100vh; /* Use height as width since we rotate */
-    height: 100vw; /* Use width as height */
-    transform: rotate(90deg); /* Rotate to make vertical video horizontal */
-    object-fit: cover; /* Ensure it covers the screen nicely */
-}
-
-/* Video Resizes to Fit */
-.video-container video {
     width: 100%;
     height: auto;
     max-width: 100%;
 }
 
-/* Make Sure the Table Doesn’t Overflow */
+/* === TABLE STYLING === */
 .table {
-    
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
 }
 
-/* MEDIA QUERIES - Adjusts Layout on Smaller Screens */
+/* === HEADER LOGO STYLING === */
+#header-logo {
+    display: flex;
+    justify-content: center; /* Ensures logo stays centered */
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Logo Image */
+#header-logo img {
+    max-width: 100%;
+    height: auto;
+    
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
 @media (max-width: 768px) {
+    /* Navbar Adjustments */
+    .navbar {
+        flex-wrap: wrap;
+        padding: 5px 10px;
+    }
+
+    
+
+    .navbar .navbar-links {
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust Other Elements */
     .newsletter-input {
         width: 100%;
     }
-    
-    .video-container video {
-        width: 100%;
-    }
-    
+
     .table {
         font-size: 14px;
         width: 100%;
     }
-    
+
+    .hhH-logo{
+        display: none;
+    }
+
     footer {
         font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
+    /* Navbar Adjustments */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        font-size: 0.8rem;
+    }
+
+    .hhH-logo{
+        display: none;
+    }
+
+    
+
+    /* Adjust Other Elements */
     .newsletter-input {
         width: 100%;
         font-size: 14px;
     }
-    
-    .video-container video {
-        width: 100%;
-    }
-    
+
     .table {
         font-size: 12px;
         width: 100%;
     }
-    
+
     footer {
         font-size: 12px;
     }
