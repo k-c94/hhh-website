@@ -85,6 +85,7 @@ html, body {
     max-width: 500px;
     margin: auto;
     color: white;
+    padding-bottom: 25px;
 }
 
 .newsletter-form {
@@ -116,7 +117,7 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     border: none;
-    border-radius: 50px;
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
     border: 2.5px solid rgb(8, 237, 245); /* Solid border for button */
@@ -155,6 +156,7 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding-top: 15px;
 }
 
 .video-container video {
@@ -176,7 +178,6 @@ html, body {
     justify-content: center; /* Ensures logo stays centered */
     align-items: center;
     width: 100%;
-    padding: 20px;
 }
 
 /* Logo Image */
