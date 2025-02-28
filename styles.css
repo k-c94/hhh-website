@@ -192,13 +192,13 @@ html, body {
     /* Navbar Adjustments */
     .navbar {
         flex-wrap: wrap;
-        padding: 5px 10px;
+        padding: 15px 10px;
     }
 
     
 
     .navbar .navbar-links {
-        gap: 8px;
+        gap: 800px;
         font-size: 0.9rem;
     }
 
@@ -215,6 +215,12 @@ html, body {
     .hhH-logo{
         display: none;
     }
+
+    /* Custom style for navbar brand */
+.navbar .navbar-brand {
+    font-size: 20px; /* Change this to your desired font size */
+    
+}
 
     footer {
         font-size: 14px;
@@ -235,7 +241,11 @@ html, body {
         gap: 5px;
         font-size: 0.8rem;
     }
-
+        /* Custom style for navbar brand */
+.navbar .navbar-brand {
+    font-size: 15px; /* Change this to your desired font size */
+    
+}
     .hhH-logo{
         display: none;
     }
